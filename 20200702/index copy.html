@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <form action="confirm.php" method="post" name="Form1">
+      <div class="form-group">
+        <label>お名前</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="山田太郎"
+          name="name"
+          required
+        />
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="help-block with-errors"></div>
+      </div>
+      <div class="form-group">
+        <label>メールアドレス</label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="xxxxxx@yahoo.co.jp"
+          name="email"
+          required
+        />
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="help-block with-errors"></div>
+      </div>
+      <div class="form-group">
+        <label>住所</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="○○県△△市□□町xxxx-yy-z"
+          name="address"
+        />
+      </div>
+      <div class="form-group">
+        <label>電話番号</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="xxx-yyyy-zzzz"
+          name="phone"
+        />
+      </div>
+      <!-- <label>件名</label><br />
+      <label class="radio-inline">
+        <input
+          type="radio"
+          name="subjectR"
+          value="checkboxA"
+          onClick="changeDisabled()"
+        />
+        〇〇のご依頼について
+      </label>
+      <label class="radio-inline">
+        <input
+          type="radio"
+          name="subjectR"
+          value="checkboxB"
+          onClick="changeDisabled()"
+        />
+        △△について
+      </label>
+      <label class="radio-inline">
+        <input
+          type="radio"
+          name="subjectR"
+          value="others"
+          onClick="changeDisabled()"
+        />
+        その他(下記の件名にご記入ください)
+      </label>
+      <div class="form-group" style="margin-top: 10px;">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="〇〇について"
+          name="subject"
+          onClick="changeDisabled()"
+        />
+      </div> -->
+      <div class="form-group">
+        <label>お問い合わせ内容</label>
+        <textarea
+          placeholder="お問い合わせ内容"
+          rows="10"
+          class="form-control"
+          name="main"
+          required
+        ></textarea>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="help-block with-errors"></div>
+      </div>
+      <button type="submit" class="btn btn-warning btn-lg btn-block">
+        送信
+      </button>
+    </form>
+
+    <!-- 件名その他を押したときだけテキストボックスをONにする -->
+    <script type="text/javascript">
+      function changeDisabled() {
+        if (document.Form1["subjectR"][2].checked) {
+          document.Form1["subject"].disabled = false;
+        } else {
+          document.Form1["subject"].disabled = true;
+        }
+      }
+      window.onload = changeDisabled;
+    </script>
+  </body>
+</html>
